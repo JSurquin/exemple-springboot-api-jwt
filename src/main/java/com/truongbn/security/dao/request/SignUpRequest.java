@@ -10,8 +10,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SignUpRequest {
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
+
+    // Modèle de données pour la demande d'inscription (signup)
+    private String firstName;  // Champ pour le prénom de l'utilisateur
+    private String lastName;   // Champ pour le nom de l'utilisateur
+    private String email;      // Champ pour l'e-mail de l'utilisateur
+    private String password;   // Champ pour le mot de passe de l'utilisateur
 }

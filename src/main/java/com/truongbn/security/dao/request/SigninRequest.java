@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SigninRequest {
-    private String email;
-    private String password;
+
+    // Modèle de données pour la demande de connexion (signin)
+    private String email;     // Champ pour l'e-mail de l'utilisateur
+    private String password;  // Champ pour le mot de passe de l'utilisateur
 }

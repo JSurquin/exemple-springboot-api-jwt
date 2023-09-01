@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api/v1/resource")
 @RequiredArgsConstructor
 public class AuthorizationController {
+
+    // Endpoint pour obtenir une ressource protégée
     @GetMapping
     public ResponseEntity<String> sayHello() {
         return ResponseEntity.ok("Here is your resource");

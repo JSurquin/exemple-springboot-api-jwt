@@ -10,5 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class JwtAuthenticationResponse {
-    private String token;
+
+    // Modèle de données pour la réponse d'authentification JWT
+    private String token;  // Champ pour le jeton JWT retourné
 }

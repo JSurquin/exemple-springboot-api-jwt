@@ -20,27 +20,32 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "_user")
 public class User implements UserDetails {
+
+    // Définition de l'entité utilisateur avec les détails de l'utilisateur
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String firstName;
-    private String lastName;
+    private String firstName;  // Prénom de l'utilisateur
+    private String lastName;   // Nom de l'utilisateur
     @Column(unique = true)
-    private String email;
-    private String password;
+    private String email;      // Adresse e-mail de l'utilisateur
+    private String password;   // Mot de passe de l'utilisateur
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private Role role;         // Rôle de l'utilisateur
+
+    // Méthode pour obtenir les autorisations de l'utilisateur (rôle)
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
+    // Méthode pour obtenir le nom d'utilisateur (dans ce cas, l'e-mail)
     @Override
     public String getUsername() {
-        // email in our case
         return email;
     }
 
+    // Méthodes pour vérifier si le compte de l'utilisateur est expiré, verrouillé, ou les informations d'identification sont expirées
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -56,6 +61,7 @@ public class User implements UserDetails {
         return true;
     }
 
+    // Méthode pour vérifier si le compte de l'utilisateur est activé
     @Override
     public boolean isEnabled() {
         return true;
